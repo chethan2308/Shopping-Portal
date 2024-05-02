@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eos-registry-api
+  labels:
+    app: eos-registry-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eos-registry-api
+  template:
+    metadata:
+      labels:
+        app: eos-registry-api
+    spec:
+      containers:
+      - name: eos-registry-api
+        image: 339713094217.dkr.ecr.us-east-1.amazonaws.com/registry:latest
+        ports:
+        - containerPort: 8761
