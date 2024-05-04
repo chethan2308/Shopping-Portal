@@ -3,3 +3,6 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 kubectl version --client
+yum install docker -y
+systemctl start docker
+systemctl status docker
